@@ -23,6 +23,29 @@ npm run build
 npm run preview
 ```
 
+## Docker
+
+Development:
+
+```bash
+docker compose up portfolio-dev
+```
+
+Production image (Nginx serving `dist`):
+
+```bash
+docker compose up --build portfolio-prod
+```
+
+App will be available at `http://localhost:8080`.
+
+## Netlify
+
+- Config is in `netlify.toml`
+- Build command: `yarn build`
+- Publish directory: `dist`
+- SPA redirects are enabled for React Router
+
 ## Data source
 
 Portfolio content is currently in:
