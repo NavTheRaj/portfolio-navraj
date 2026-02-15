@@ -13,7 +13,7 @@ import { AnimeGameSection } from "./components/AnimeGameSection";
 
 const { Header, Content } = Layout;
 const navItems = ["experience", "education", "projects", "skills", "game"] as const;
-type ThemeMode = "future" | "retro" | "classic" | "noir";
+type ThemeMode = "future" | "retro" | "classic" | "paper" | "noir";
 
 function scrollToSection(id: string) {
   const section = document.getElementById(id);
@@ -110,6 +110,7 @@ export function App() {
             { label: "Future", value: "future" },
             { label: "Retro", value: "retro" },
             { label: "Classic", value: "classic" },
+            { label: "Paper", value: "paper" },
             { label: "Noir", value: "noir" }
           ]}
           value={themeMode}
@@ -167,6 +168,7 @@ export function App() {
                 { label: "Future", value: "future" },
                 { label: "Retro", value: "retro" },
                 { label: "Classic", value: "classic" },
+                { label: "Paper", value: "paper" },
                 { label: "Noir", value: "noir" }
               ]}
               value={themeMode}

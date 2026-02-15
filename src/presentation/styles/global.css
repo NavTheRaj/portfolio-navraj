@@ -475,6 +475,21 @@ body {
   color: #98ffcc;
 }
 
+.experience-mobile-list {
+  display: none;
+  gap: 12px;
+}
+
+.experience-period-pill {
+  display: inline-block;
+  margin-bottom: 8px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: var(--text-dim);
+  background: rgba(255, 255, 255, 0.05);
+}
+
 .skill-tag {
   margin: 0;
   border: 1px solid rgba(255, 255, 255, 0.24);
@@ -537,6 +552,14 @@ body {
 
   .game-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .experience-desktop-card {
+    display: none;
+  }
+
+  .experience-mobile-list {
+    display: grid;
   }
 
   .top-nav {
@@ -658,6 +681,151 @@ body {
   background: rgba(255, 250, 242, 0.9);
   color: #2a221b;
   border-color: rgba(66, 53, 40, 0.2);
+}
+
+:root[data-theme="classic"] .mobile-menu-overlay {
+  background: rgba(241, 233, 220, 0.78);
+}
+
+:root[data-theme="classic"] .mobile-menu-panel {
+  background: rgba(255, 251, 244, 0.97);
+  border-color: rgba(66, 53, 40, 0.22);
+  box-shadow: 0 14px 28px rgba(49, 38, 26, 0.14);
+}
+
+:root[data-theme="classic"] .mobile-menu-title.ant-typography,
+:root[data-theme="classic"] .mobile-menu-close.ant-btn,
+:root[data-theme="classic"] .mobile-theme-label.ant-typography,
+:root[data-theme="classic"] .mobile-link.ant-btn {
+  color: #2a221b;
+}
+
+:root[data-theme="classic"] .mobile-link.ant-btn {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(66, 53, 40, 0.2);
+}
+
+:root[data-theme="classic"] .mobile-link-active.ant-btn {
+  background: linear-gradient(120deg, rgba(114, 76, 47, 0.16), rgba(56, 90, 125, 0.14));
+  border-color: rgba(66, 53, 40, 0.3);
+}
+
+:root[data-theme="classic"] .mobile-theme-switch.ant-segmented {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(66, 53, 40, 0.2);
+}
+
+:root[data-theme="classic"] .game-card {
+  color: #2a221b;
+  background:
+    linear-gradient(145deg, rgba(255, 252, 246, 0.98), rgba(246, 238, 225, 0.95)),
+    radial-gradient(circle at 10% 10%, rgba(56, 90, 125, 0.08), transparent 45%);
+  border-color: rgba(66, 53, 40, 0.22);
+}
+
+:root[data-theme="classic"] .game-card-open {
+  background:
+    linear-gradient(145deg, rgba(114, 76, 47, 0.18), rgba(56, 90, 125, 0.16)),
+    radial-gradient(circle at 20% 20%, rgba(63, 107, 88, 0.16), transparent 55%);
+}
+
+:root[data-theme="paper"] {
+  --bg-1: #f7f2e7;
+  --bg-2: #efe7d7;
+  --bg-3: #e8ddc8;
+  --accent-1: #6f5a3a;
+  --accent-2: #4f6f68;
+  --accent-3: #9a7f4f;
+  --accent-4: #7b8b73;
+  --text-main: #2d271f;
+  --text-dim: #5b5145;
+  --line: rgba(45, 39, 31, 0.18);
+}
+
+:root[data-theme="paper"] body {
+  font-family: "Libre Baskerville", Georgia, serif;
+  background: #f7f2e7;
+}
+
+:root[data-theme="paper"] .app-layout {
+  background:
+    radial-gradient(circle at 18% 8%, rgba(111, 90, 58, 0.12), transparent 38%),
+    linear-gradient(165deg, #f7f2e7 0%, #efe7d7 55%, #e9dfcd 100%);
+}
+
+:root[data-theme="paper"] .aurora-bg,
+:root[data-theme="paper"] .hero-orb {
+  opacity: 0.16;
+  filter: none;
+}
+
+:root[data-theme="paper"] .grain-overlay {
+  opacity: 0.045;
+}
+
+:root[data-theme="paper"] .app-header,
+:root[data-theme="paper"] .content-shell,
+:root[data-theme="paper"] .page-section,
+:root[data-theme="paper"] .hero-content-glass,
+:root[data-theme="paper"] .ant-card,
+:root[data-theme="paper"] .mobile-menu-panel {
+  background: rgba(255, 251, 243, 0.92) !important;
+  border-color: rgba(61, 52, 41, 0.18) !important;
+  box-shadow: 0 6px 18px rgba(57, 44, 30, 0.08);
+  backdrop-filter: none;
+}
+
+:root[data-theme="paper"] .hero-orb-core {
+  background: radial-gradient(circle, rgba(111, 90, 58, 0.45), rgba(255, 255, 255, 0.12));
+}
+
+:root[data-theme="paper"] .hero-tag,
+:root[data-theme="paper"] .skill-tag,
+:root[data-theme="paper"] .hero-meta span,
+:root[data-theme="paper"] .top-nav,
+:root[data-theme="paper"] .theme-switch.ant-segmented,
+:root[data-theme="paper"] .mobile-theme-switch.ant-segmented {
+  background: rgba(249, 241, 228, 0.95);
+  border-color: rgba(61, 52, 41, 0.2);
+  color: #2d271f;
+}
+
+:root[data-theme="paper"] .top-nav-btn.ant-btn,
+:root[data-theme="paper"] .mobile-link.ant-btn,
+:root[data-theme="paper"] .mobile-menu-title.ant-typography,
+:root[data-theme="paper"] .mobile-theme-label.ant-typography,
+:root[data-theme="paper"] .mobile-menu-close.ant-btn {
+  color: #2d271f;
+}
+
+:root[data-theme="paper"] .top-nav-btn-active.ant-btn,
+:root[data-theme="paper"] .mobile-link-active.ant-btn {
+  background: linear-gradient(120deg, rgba(111, 90, 58, 0.16), rgba(79, 111, 104, 0.16));
+  border-color: rgba(61, 52, 41, 0.24);
+}
+
+:root[data-theme="paper"] .mobile-menu-overlay {
+  background: rgba(239, 231, 215, 0.82);
+}
+
+:root[data-theme="paper"] .game-card {
+  color: #2d271f;
+  background:
+    linear-gradient(145deg, rgba(255, 251, 243, 0.98), rgba(243, 235, 221, 0.94)),
+    radial-gradient(circle at 10% 10%, rgba(79, 111, 104, 0.07), transparent 45%);
+  border-color: rgba(61, 52, 41, 0.2);
+}
+
+:root[data-theme="paper"] .game-card-open {
+  background:
+    linear-gradient(145deg, rgba(111, 90, 58, 0.18), rgba(79, 111, 104, 0.16)),
+    radial-gradient(circle at 20% 20%, rgba(123, 139, 115, 0.16), transparent 55%);
+}
+
+:root[data-theme="paper"] .experience-period-pill {
+  border-color: rgba(61, 52, 41, 0.22);
+  color: #5b5145;
+  background: rgba(245, 238, 226, 0.9);
 }
 
 :root[data-theme="noir"] {
