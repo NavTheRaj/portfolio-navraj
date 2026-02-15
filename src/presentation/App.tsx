@@ -13,7 +13,15 @@ import { AnimeGameSection } from "./components/AnimeGameSection";
 
 const { Header, Content } = Layout;
 const navItems = ["experience", "education", "projects", "skills", "game"] as const;
-type ThemeMode = "future" | "retro" | "classic" | "paper" | "noir";
+const themeModeOptions = [
+  { label: "Future", value: "future" },
+  { label: "Retro", value: "retro" },
+  { label: "Classic", value: "classic" },
+  { label: "Paper", value: "paper" },
+  { label: "Noir", value: "noir" }
+] as const;
+type ThemeMode = (typeof themeModeOptions)[number]["value"];
+const THEME_STORAGE_KEY = "portfolio_theme_mode";
 
 function scrollToSection(id: string) {
   const section = document.getElementById(id);
@@ -27,7 +35,11 @@ export function App() {
   const { data, isLoading, error } = usePortfolio();
   const [activeSection, setActiveSection] = useState<string>("experience");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [themeMode, setThemeMode] = useState<ThemeMode>("future");
+  const [themeMode, setThemeMode] = useState<ThemeMode>(() => {
+    const savedMode = window.localStorage.getItem(THEME_STORAGE_KEY);
+    const isValid = themeModeOptions.some((mode) => mode.value === savedMode);
+    return isValid ? (savedMode as ThemeMode) : "future";
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -61,6 +73,7 @@ export function App() {
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", themeMode);
+    window.localStorage.setItem(THEME_STORAGE_KEY, themeMode);
   }, [themeMode]);
 
   const onNavClick = (id: string) => {
@@ -106,13 +119,7 @@ export function App() {
         </div>
         <Segmented
           className="theme-switch"
-          options={[
-            { label: "Future", value: "future" },
-            { label: "Retro", value: "retro" },
-            { label: "Classic", value: "classic" },
-            { label: "Paper", value: "paper" },
-            { label: "Noir", value: "noir" }
-          ]}
+          options={themeModeOptions}
           value={themeMode}
           onChange={(value) => setThemeMode(value as ThemeMode)}
         />
@@ -164,13 +171,7 @@ export function App() {
             <Typography.Text className="mobile-theme-label">View mode</Typography.Text>
             <Segmented
               className="mobile-theme-switch"
-              options={[
-                { label: "Future", value: "future" },
-                { label: "Retro", value: "retro" },
-                { label: "Classic", value: "classic" },
-                { label: "Paper", value: "paper" },
-                { label: "Noir", value: "noir" }
-              ]}
+              options={themeModeOptions}
               value={themeMode}
               onChange={(value) => setThemeMode(value as ThemeMode)}
             />

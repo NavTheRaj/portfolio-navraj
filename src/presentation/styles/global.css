@@ -715,6 +715,24 @@ body {
   border-color: rgba(66, 53, 40, 0.2);
 }
 
+:root[data-theme="classic"] .theme-switch .ant-segmented-thumb,
+:root[data-theme="classic"] .mobile-theme-switch .ant-segmented-thumb {
+  background: linear-gradient(120deg, #6e4a2f, #8d6e45);
+}
+
+:root[data-theme="classic"] .theme-switch .ant-segmented-item-label,
+:root[data-theme="classic"] .mobile-theme-switch .ant-segmented-item-label {
+  color: #4d4134 !important;
+}
+
+:root[data-theme="classic"] .theme-switch .ant-segmented-item-selected .ant-segmented-item-label,
+:root[data-theme="classic"]
+  .mobile-theme-switch
+  .ant-segmented-item-selected
+  .ant-segmented-item-label {
+  color: #fffaf0 !important;
+}
+
 :root[data-theme="classic"] .game-card {
   color: #2a221b;
   background:
@@ -749,8 +767,23 @@ body {
 
 :root[data-theme="paper"] .app-layout {
   background:
-    radial-gradient(circle at 18% 8%, rgba(111, 90, 58, 0.12), transparent 38%),
-    linear-gradient(165deg, #f7f2e7 0%, #efe7d7 55%, #e9dfcd 100%);
+    radial-gradient(circle at 12% 10%, rgba(111, 90, 58, 0.12), transparent 34%),
+    radial-gradient(circle at 88% 14%, rgba(154, 127, 79, 0.1), transparent 36%),
+    repeating-radial-gradient(
+      circle at 0 0,
+      rgba(103, 82, 51, 0.035) 0px,
+      rgba(103, 82, 51, 0.035) 1.4px,
+      transparent 1.4px,
+      transparent 9px
+    ),
+    repeating-linear-gradient(
+      35deg,
+      rgba(115, 92, 61, 0.03) 0px,
+      rgba(115, 92, 61, 0.03) 1px,
+      transparent 1px,
+      transparent 11px
+    ),
+    linear-gradient(165deg, #f7f2e7 0%, #efe7d7 55%, #e7dbc4 100%);
 }
 
 :root[data-theme="paper"] .aurora-bg,
@@ -760,7 +793,11 @@ body {
 }
 
 :root[data-theme="paper"] .grain-overlay {
-  opacity: 0.045;
+  opacity: 0.09;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(84, 66, 40, 0.24) 0.7px, transparent 0.7px),
+    radial-gradient(circle at 80% 80%, rgba(84, 66, 40, 0.2) 0.6px, transparent 0.6px);
+  background-size: 3px 3px, 5px 5px;
 }
 
 :root[data-theme="paper"] .app-header,
@@ -788,6 +825,24 @@ body {
   background: rgba(249, 241, 228, 0.95);
   border-color: rgba(61, 52, 41, 0.2);
   color: #2d271f;
+}
+
+:root[data-theme="paper"] .theme-switch .ant-segmented-thumb,
+:root[data-theme="paper"] .mobile-theme-switch .ant-segmented-thumb {
+  background: linear-gradient(120deg, #8a6d43, #a58556);
+}
+
+:root[data-theme="paper"] .theme-switch .ant-segmented-item-label,
+:root[data-theme="paper"] .mobile-theme-switch .ant-segmented-item-label {
+  color: #5a4f41 !important;
+}
+
+:root[data-theme="paper"] .theme-switch .ant-segmented-item-selected .ant-segmented-item-label,
+:root[data-theme="paper"]
+  .mobile-theme-switch
+  .ant-segmented-item-selected
+  .ant-segmented-item-label {
+  color: #fff9ee !important;
 }
 
 :root[data-theme="paper"] .top-nav-btn.ant-btn,
