@@ -946,3 +946,22 @@ body {
 :root[data-theme="noir"] .mobile-link-active.ant-btn {
   background: rgba(255, 255, 255, 0.12);
 }
+
+@media (max-width: 960px) {
+  .content-shell {
+    padding: 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    backdrop-filter: none !important;
+    box-shadow: none !important;
+  }
+
+  .page-section {
+    padding: 8px 0 !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+}
