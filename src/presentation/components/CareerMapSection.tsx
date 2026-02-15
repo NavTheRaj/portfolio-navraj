@@ -4,6 +4,9 @@ import { ComposableMap, Geographies, Geography, Marker } from "react-simple-maps
 import type { Experience } from "@domain/entities/portfolio";
 import { SectionTitle } from "./SectionTitle";
 
+type MapGeo = { rsmKey: string };
+type GeographiesRenderProps = { geographies: MapGeo[] };
+
 type GeoPoint = {
   key: string;
   label: string;
@@ -110,8 +113,8 @@ export function CareerMapSection({ experiences }: { experiences: Experience[] })
               className="world-map"
             >
               <Geographies geography={geoUrl}>
-                {({ geographies }) =>
-                  geographies.map((geo) => (
+                {({ geographies }: GeographiesRenderProps) =>
+                  geographies.map((geo: MapGeo) => (
                     <Geography key={geo.rsmKey} geography={geo} className="map-geo" />
                   ))
                 }
