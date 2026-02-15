@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Sora:wght@400;600;700&family=Press+Start+2P&family=Libre+Baskerville:wght@400;700&family=IBM+Plex+Mono:wght@400;600&display=swap");
 
 :root {
   --bg-1: #09090b;
@@ -114,6 +114,13 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.theme-switch.ant-segmented {
+  margin-left: auto;
+  margin-right: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+
 .mobile-menu-btn.ant-btn {
   display: none;
   color: var(--text-main);
@@ -163,6 +170,7 @@ body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 8px;
+  margin-bottom: 12px;
 }
 
 .mobile-link.ant-btn {
@@ -177,6 +185,18 @@ body {
 .mobile-link-active.ant-btn {
   background: linear-gradient(120deg, rgba(255, 111, 60, 0.22), rgba(0, 168, 204, 0.22));
   border-color: rgba(124, 246, 255, 0.34);
+}
+
+.mobile-theme-label.ant-typography {
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.mobile-theme-switch.ant-segmented {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
 .top-nav-btn.ant-btn {
@@ -523,6 +543,10 @@ body {
     display: none;
   }
 
+  .theme-switch.ant-segmented {
+    display: none;
+  }
+
   .mobile-menu-btn.ant-btn {
     display: inline-flex;
   }
@@ -532,4 +556,149 @@ body {
   .game-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
+}
+
+:root[data-theme="retro"] {
+  --bg-1: #180620;
+  --bg-2: #261036;
+  --bg-3: #2c1650;
+  --accent-1: #ff4fd8;
+  --accent-2: #00f7ff;
+  --accent-3: #fff27d;
+  --accent-4: #7cff9b;
+  --text-main: #fff7e8;
+  --text-dim: #f3c6ff;
+  --line: rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme="retro"] body {
+  font-family: "IBM Plex Mono", "Space Grotesk", sans-serif;
+}
+
+:root[data-theme="retro"] .app-layout {
+  background:
+    linear-gradient(180deg, #180620 0%, #1c0f3a 42%, #131231 100%),
+    repeating-linear-gradient(
+      to top,
+      rgba(255, 255, 255, 0.06) 0px,
+      rgba(255, 255, 255, 0.06) 1px,
+      transparent 1px,
+      transparent 24px
+    );
+}
+
+:root[data-theme="retro"] .aurora-bg {
+  background:
+    radial-gradient(circle at 18% 14%, rgba(255, 79, 216, 0.32), transparent 40%),
+    radial-gradient(circle at 78% 8%, rgba(0, 247, 255, 0.3), transparent 40%),
+    radial-gradient(circle at 52% 82%, rgba(124, 255, 155, 0.18), transparent 42%);
+}
+
+:root[data-theme="retro"] .hero-orb {
+  filter: drop-shadow(0 0 34px rgba(255, 79, 216, 0.42));
+}
+
+:root[data-theme="retro"] .hero-tag {
+  background: rgba(255, 79, 216, 0.2);
+  border: 1px solid rgba(255, 79, 216, 0.5);
+}
+
+:root[data-theme="retro"] .section-heading.ant-typography,
+:root[data-theme="retro"] .hero-name.ant-typography {
+  text-shadow: 0 0 12px rgba(255, 79, 216, 0.34);
+}
+
+:root[data-theme="classic"] {
+  --bg-1: #f3efe6;
+  --bg-2: #ece4d5;
+  --bg-3: #e6ddcc;
+  --accent-1: #724c2f;
+  --accent-2: #385a7d;
+  --accent-3: #a68542;
+  --accent-4: #3f6b58;
+  --text-main: #2a221b;
+  --text-dim: #594d40;
+  --line: rgba(42, 34, 27, 0.18);
+}
+
+:root[data-theme="classic"] body {
+  font-family: "Libre Baskerville", Georgia, serif;
+  background: #f3efe6;
+}
+
+:root[data-theme="classic"] .app-layout {
+  background:
+    radial-gradient(circle at 12% 12%, rgba(114, 76, 47, 0.15), transparent 34%),
+    radial-gradient(circle at 80% 14%, rgba(56, 90, 125, 0.12), transparent 40%),
+    linear-gradient(165deg, #f3efe6 0%, #ece4d5 52%, #e0d6c5 100%);
+}
+
+:root[data-theme="classic"] .grain-overlay {
+  opacity: 0.03;
+}
+
+:root[data-theme="classic"] .app-header,
+:root[data-theme="classic"] .content-shell,
+:root[data-theme="classic"] .page-section,
+:root[data-theme="classic"] .hero-content-glass,
+:root[data-theme="classic"] .ant-card {
+  background: rgba(255, 252, 246, 0.76) !important;
+  border-color: rgba(66, 53, 40, 0.18) !important;
+  box-shadow: 0 8px 20px rgba(49, 38, 26, 0.08);
+}
+
+:root[data-theme="classic"] .hero-orb {
+  opacity: 0.32;
+}
+
+:root[data-theme="classic"] .skill-tag,
+:root[data-theme="classic"] .hero-meta span,
+:root[data-theme="classic"] .top-nav,
+:root[data-theme="classic"] .theme-switch.ant-segmented {
+  background: rgba(255, 250, 242, 0.9);
+  color: #2a221b;
+  border-color: rgba(66, 53, 40, 0.2);
+}
+
+:root[data-theme="noir"] {
+  --bg-1: #050507;
+  --bg-2: #0a0d10;
+  --bg-3: #14181d;
+  --accent-1: #d9d9d9;
+  --accent-2: #8f98a3;
+  --accent-3: #ececec;
+  --accent-4: #707782;
+  --text-main: #f0f0f0;
+  --text-dim: #abb1b8;
+  --line: rgba(255, 255, 255, 0.14);
+}
+
+:root[data-theme="noir"] body {
+  font-family: "IBM Plex Mono", "Space Grotesk", sans-serif;
+}
+
+:root[data-theme="noir"] .app-layout,
+:root[data-theme="noir"] .app-header,
+:root[data-theme="noir"] .content-shell,
+:root[data-theme="noir"] .page-section,
+:root[data-theme="noir"] .hero-content-glass,
+:root[data-theme="noir"] .ant-card {
+  background:
+    linear-gradient(145deg, rgba(10, 12, 15, 0.94), rgba(18, 21, 26, 0.9)) !important;
+}
+
+:root[data-theme="noir"] .aurora-bg {
+  background:
+    radial-gradient(circle at 16% 10%, rgba(255, 255, 255, 0.1), transparent 40%),
+    radial-gradient(circle at 76% 78%, rgba(180, 185, 192, 0.1), transparent 44%);
+}
+
+:root[data-theme="noir"] .hero-orb,
+:root[data-theme="noir"] .hero-orb-core {
+  filter: grayscale(100%);
+}
+
+:root[data-theme="noir"] .top-nav-btn-active.ant-btn,
+:root[data-theme="noir"] .mobile-link-active.ant-btn {
+  background: rgba(255, 255, 255, 0.12);
 }

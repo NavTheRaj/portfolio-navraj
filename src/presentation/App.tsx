@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Alert, Button, Layout, Skeleton, Space, Typography } from "antd";
+import { Alert, Button, Layout, Segmented, Skeleton, Space, Typography } from "antd";
 import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import { usePortfolio } from "./hooks/usePortfolio";
@@ -13,6 +13,7 @@ import { AnimeGameSection } from "./components/AnimeGameSection";
 
 const { Header, Content } = Layout;
 const navItems = ["experience", "education", "projects", "skills", "game"] as const;
+type ThemeMode = "future" | "retro" | "classic" | "noir";
 
 function scrollToSection(id: string) {
   const section = document.getElementById(id);
@@ -26,6 +27,7 @@ export function App() {
   const { data, isLoading, error } = usePortfolio();
   const [activeSection, setActiveSection] = useState<string>("experience");
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
+  const [themeMode, setThemeMode] = useState<ThemeMode>("future");
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -56,6 +58,10 @@ export function App() {
       document.body.style.overflow = "";
     };
   }, [menuOpen]);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", themeMode);
+  }, [themeMode]);
 
   const onNavClick = (id: string) => {
     scrollToSection(id);
@@ -98,6 +104,17 @@ export function App() {
             </Button>
           ))}
         </div>
+        <Segmented
+          className="theme-switch"
+          options={[
+            { label: "Future", value: "future" },
+            { label: "Retro", value: "retro" },
+            { label: "Classic", value: "classic" },
+            { label: "Noir", value: "noir" }
+          ]}
+          value={themeMode}
+          onChange={(value) => setThemeMode(value as ThemeMode)}
+        />
         <Button
           type="text"
           className="mobile-menu-btn"
@@ -143,6 +160,18 @@ export function App() {
                 </Button>
               ))}
             </div>
+            <Typography.Text className="mobile-theme-label">View mode</Typography.Text>
+            <Segmented
+              className="mobile-theme-switch"
+              options={[
+                { label: "Future", value: "future" },
+                { label: "Retro", value: "retro" },
+                { label: "Classic", value: "classic" },
+                { label: "Noir", value: "noir" }
+              ]}
+              value={themeMode}
+              onChange={(value) => setThemeMode(value as ThemeMode)}
+            />
           </motion.div>
         </motion.div>
       ) : null}
