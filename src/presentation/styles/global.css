@@ -981,4 +981,16 @@ body {
   :root[data-theme="noir"] .grain-overlay {
     display: none !important;
   }
+
+  :root[data-theme="classic"] .content-shell,
+  :root[data-theme="paper"] .content-shell,
+  :root[data-theme="noir"] .content-shell,
+  :root[data-theme="classic"] .page-section,
+  :root[data-theme="paper"] .page-section,
+  :root[data-theme="noir"] .page-section {
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+  }
 }
