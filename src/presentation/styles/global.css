@@ -965,3 +965,20 @@ body {
     box-shadow: none !important;
   }
 }
+
+@media (max-width: 960px) {
+  :root[data-theme="classic"] .app-layout,
+  :root[data-theme="paper"] .app-layout,
+  :root[data-theme="noir"] .app-layout {
+    background: var(--bg-1) !important;
+  }
+
+  :root[data-theme="classic"] .aurora-bg,
+  :root[data-theme="classic"] .grain-overlay,
+  :root[data-theme="paper"] .aurora-bg,
+  :root[data-theme="paper"] .grain-overlay,
+  :root[data-theme="noir"] .aurora-bg,
+  :root[data-theme="noir"] .grain-overlay {
+    display: none !important;
+  }
+}
