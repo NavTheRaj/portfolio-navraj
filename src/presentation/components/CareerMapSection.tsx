@@ -104,7 +104,7 @@ export function CareerMapSection({ experiences }: { experiences: Experience[] })
   return (
     <section id="map" className="page-section">
       <SectionTitle eyebrow="Journey" title="Career Map" />
-      <Row gutter={[16, 16]}>
+      <Row gutter={[16, 16]} className="map-row">
         <Col xs={24} lg={16}>
           <Card bordered={false} className="map-card">
             <ComposableMap
