@@ -20,6 +20,7 @@ export function HeroSection({ profile }: HeroSectionProps) {
   return (
     <section className="hero">
       <motion.div
+        className="hero-content-glass"
         variants={rise}
         initial="hidden"
         animate="show"
@@ -35,6 +36,10 @@ export function HeroSection({ profile }: HeroSectionProps) {
         <Typography.Paragraph className="hero-summary">
           {profile.summary}
         </Typography.Paragraph>
+        <div className="hero-meta">
+          <span>{profile.location}</span>
+          <span>{profile.industry}</span>
+        </div>
         <Space wrap size="middle">
           <Button
             type="primary"
@@ -65,7 +70,9 @@ export function HeroSection({ profile }: HeroSectionProps) {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8, delay: 0.2 }}
-      />
+      >
+        <div className="hero-orb-core" />
+      </motion.div>
     </section>
   );
 }

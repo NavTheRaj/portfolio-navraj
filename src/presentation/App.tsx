@@ -67,6 +67,7 @@ export function App() {
   return (
     <Layout className="app-layout">
       <div className="aurora-bg" />
+      <div className="grain-overlay" />
       <Header className="app-header">
         <Typography.Title level={4} className="brand">
           {data.profile.fullName}
@@ -86,6 +87,7 @@ export function App() {
       </Header>
       <Content className="app-content">
         <motion.div
+          className="content-shell"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.45 }}
