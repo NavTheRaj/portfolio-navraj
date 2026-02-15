@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Alert, Button, Layout, Skeleton, Space, Typography } from "antd";
+import { CloseOutlined, MenuOutlined } from "@ant-design/icons";
 import { motion } from "framer-motion";
 import { usePortfolio } from "./hooks/usePortfolio";
 import { HeroSection } from "./components/HeroSection";
@@ -24,6 +25,7 @@ function scrollToSection(id: string) {
 export function App() {
   const { data, isLoading, error } = usePortfolio();
   const [activeSection, setActiveSection] = useState<string>("experience");
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -47,6 +49,18 @@ export function App() {
 
     return () => observer.disconnect();
   }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
+  const onNavClick = (id: string) => {
+    scrollToSection(id);
+    setMenuOpen(false);
+  };
 
   if (isLoading) {
     return (
@@ -78,13 +92,60 @@ export function App() {
               key={item}
               type="text"
               className={`top-nav-btn ${activeSection === item ? "top-nav-btn-active" : ""}`}
-              onClick={() => scrollToSection(item)}
+              onClick={() => onNavClick(item)}
             >
               {item.charAt(0).toUpperCase() + item.slice(1)}
             </Button>
           ))}
         </div>
+        <Button
+          type="text"
+          className="mobile-menu-btn"
+          icon={<MenuOutlined />}
+          onClick={() => setMenuOpen(true)}
+          aria-label="Open menu"
+        />
       </Header>
+      {menuOpen ? (
+        <motion.div
+          className="mobile-menu-overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
+          <motion.div
+            className="mobile-menu-panel"
+            initial={{ y: 40, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            <div className="mobile-menu-top">
+              <Typography.Title level={5} className="mobile-menu-title">
+                Navigate
+              </Typography.Title>
+              <Button
+                type="text"
+                className="mobile-menu-close"
+                icon={<CloseOutlined />}
+                onClick={() => setMenuOpen(false)}
+                aria-label="Close menu"
+              />
+            </div>
+            <div className="mobile-menu-links">
+              {navItems.map((item) => (
+                <Button
+                  key={item}
+                  type="text"
+                  className={`mobile-link ${activeSection === item ? "mobile-link-active" : ""}`}
+                  onClick={() => onNavClick(item)}
+                >
+                  {item.charAt(0).toUpperCase() + item.slice(1)}
+                </Button>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+      ) : null}
       <Content className="app-content">
         <motion.div
           className="content-shell"

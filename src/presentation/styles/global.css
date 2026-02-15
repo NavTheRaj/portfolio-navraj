@@ -114,6 +114,71 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.mobile-menu-btn.ant-btn {
+  display: none;
+  color: var(--text-main);
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-menu-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  background: rgba(3, 7, 16, 0.6);
+  backdrop-filter: blur(10px);
+  display: grid;
+  align-items: end;
+  padding: 14px;
+}
+
+.mobile-menu-panel {
+  border-radius: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background:
+    linear-gradient(145deg, rgba(16, 24, 36, 0.95), rgba(14, 19, 32, 0.9)),
+    radial-gradient(circle at 10% 10%, rgba(124, 246, 255, 0.16), transparent 45%);
+  box-shadow: 0 24px 44px rgba(0, 0, 0, 0.35);
+  padding: 14px;
+}
+
+.mobile-menu-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.mobile-menu-title.ant-typography {
+  margin: 0;
+  color: var(--text-main);
+}
+
+.mobile-menu-close.ant-btn {
+  color: var(--text-main);
+}
+
+.mobile-menu-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.mobile-link.ant-btn {
+  justify-content: flex-start;
+  height: 46px;
+  border-radius: 12px;
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.mobile-link-active.ant-btn {
+  background: linear-gradient(120deg, rgba(255, 111, 60, 0.22), rgba(0, 168, 204, 0.22));
+  border-color: rgba(124, 246, 255, 0.34);
+}
+
 .top-nav-btn.ant-btn {
   color: var(--text-dim);
   border-radius: 999px;
@@ -452,6 +517,14 @@ body {
 
   .game-grid {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .top-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn.ant-btn {
+    display: inline-flex;
   }
 }
 
