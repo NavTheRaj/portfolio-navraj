@@ -422,6 +422,47 @@ body {
   font-weight: 600;
 }
 
+.map-card {
+  overflow: hidden;
+}
+
+.world-map {
+  width: 100%;
+  height: auto;
+  min-height: 260px;
+}
+
+.map-geo {
+  fill: rgba(255, 255, 255, 0.14);
+  stroke: rgba(255, 255, 255, 0.2);
+  stroke-width: 0.5;
+}
+
+.map-dot-pulse {
+  fill: rgba(255, 111, 60, 0.2);
+  stroke: rgba(255, 111, 60, 0.65);
+  stroke-width: 1.2;
+}
+
+.map-dot-core {
+  fill: #ff6f3c;
+}
+
+.map-dot-label {
+  fill: var(--text-main);
+  font-size: 0.62rem;
+  text-anchor: middle;
+}
+
+.map-stats {
+  display: grid;
+  gap: 12px;
+}
+
+.map-location-card .card-body.ant-typography {
+  margin-bottom: 0;
+}
+
 .game-shell {
   overflow: hidden;
   position: relative;
@@ -764,6 +805,15 @@ body {
   color: #6f6253 !important;
 }
 
+:root[data-theme="classic"] .map-geo {
+  fill: rgba(66, 53, 40, 0.16);
+  stroke: rgba(66, 53, 40, 0.26);
+}
+
+:root[data-theme="classic"] .map-dot-core {
+  fill: #724c2f;
+}
+
 :root[data-theme="paper"] {
   --bg-1: #f7f2e7;
   --bg-2: #efe7d7;
@@ -904,6 +954,15 @@ body {
   color: #6d6152 !important;
 }
 
+:root[data-theme="paper"] .map-geo {
+  fill: rgba(61, 52, 41, 0.14);
+  stroke: rgba(61, 52, 41, 0.24);
+}
+
+:root[data-theme="paper"] .map-dot-core {
+  fill: #6f5a3a;
+}
+
 :root[data-theme="noir"] {
   --bg-1: #050507;
   --bg-2: #0a0d10;
@@ -945,6 +1004,15 @@ body {
 :root[data-theme="noir"] .top-nav-btn-active.ant-btn,
 :root[data-theme="noir"] .mobile-link-active.ant-btn {
   background: rgba(255, 255, 255, 0.12);
+}
+
+:root[data-theme="noir"] .map-geo {
+  fill: rgba(255, 255, 255, 0.11);
+  stroke: rgba(255, 255, 255, 0.22);
+}
+
+:root[data-theme="noir"] .map-dot-core {
+  fill: #f0f0f0;
 }
 
 @media (max-width: 960px) {

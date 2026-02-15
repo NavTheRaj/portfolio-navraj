@@ -10,9 +10,10 @@ import { ProjectsSection } from "./components/ProjectsSection";
 import { SkillsSection } from "./components/SkillsSection";
 import { FooterSection } from "./components/FooterSection";
 import { AnimeGameSection } from "./components/AnimeGameSection";
+import { CareerMapSection } from "./components/CareerMapSection";
 
 const { Header, Content } = Layout;
-const navItems = ["experience", "education", "projects", "skills", "game"] as const;
+const navItems = ["experience", "education", "projects", "skills", "map", "game"] as const;
 type ThemeMode = "future" | "retro" | "classic" | "paper" | "noir";
 type ThemeModeOption = { label: string; value: ThemeMode };
 const themeModeOptions: ThemeModeOption[] = [
@@ -192,6 +193,7 @@ export function App() {
             <EducationSection educations={data.educations} />
             <ProjectsSection projects={data.projects} />
             <SkillsSection skills={data.skills} />
+            <CareerMapSection experiences={data.experiences} />
             <AnimeGameSection />
           </Space>
           <FooterSection fullName={data.profile.fullName} socials={data.profile.socials} />
