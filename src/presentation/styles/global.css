@@ -413,6 +413,11 @@ body {
   color: var(--text-dim);
 }
 
+.ant-timeline .ant-timeline-item-label {
+  color: var(--text-dim) !important;
+  font-weight: 500;
+}
+
 .project-card .ant-card-head-title {
   font-weight: 600;
 }
@@ -528,7 +533,7 @@ body {
   }
 
   .app-content {
-    padding-inline: 14px;
+    padding: 14px 10px 40px;
   }
 
   .hero {
@@ -538,12 +543,20 @@ body {
   }
 
   .content-shell {
-    padding: 12px;
-    border-radius: 16px;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background: transparent;
+    backdrop-filter: none;
+    box-shadow: none;
   }
 
   .page-section {
-    padding: 12px;
+    padding: 8px 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
   }
 
   .hero-orb {
@@ -747,6 +760,10 @@ body {
     radial-gradient(circle at 20% 20%, rgba(63, 107, 88, 0.16), transparent 55%);
 }
 
+:root[data-theme="classic"] .ant-timeline .ant-timeline-item-label {
+  color: #6f6253 !important;
+}
+
 :root[data-theme="paper"] {
   --bg-1: #f7f2e7;
   --bg-2: #efe7d7;
@@ -881,6 +898,10 @@ body {
   border-color: rgba(61, 52, 41, 0.22);
   color: #5b5145;
   background: rgba(245, 238, 226, 0.9);
+}
+
+:root[data-theme="paper"] .ant-timeline .ant-timeline-item-label {
+  color: #6d6152 !important;
 }
 
 :root[data-theme="noir"] {
