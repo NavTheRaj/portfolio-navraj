@@ -33,7 +33,7 @@ export function FooterSection({ fullName, socials }: FooterSectionProps) {
         ))}
       </Space>
       <Typography.Text className="footer-copy">
-        {year} {fullName}. Built with coffee, curiosity, and late-night debug wins.
+        @{year} {fullName}. Built with coffee, curiosity, and late-night debug wins.
       </Typography.Text>
     </footer>
   );
