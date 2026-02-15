@@ -13,14 +13,15 @@ import { AnimeGameSection } from "./components/AnimeGameSection";
 
 const { Header, Content } = Layout;
 const navItems = ["experience", "education", "projects", "skills", "game"] as const;
-const themeModeOptions = [
+type ThemeMode = "future" | "retro" | "classic" | "paper" | "noir";
+type ThemeModeOption = { label: string; value: ThemeMode };
+const themeModeOptions: ThemeModeOption[] = [
   { label: "Future", value: "future" },
   { label: "Retro", value: "retro" },
   { label: "Classic", value: "classic" },
   { label: "Paper", value: "paper" },
   { label: "Noir", value: "noir" }
-] as const;
-type ThemeMode = (typeof themeModeOptions)[number]["value"];
+];
 const THEME_STORAGE_KEY = "portfolio_theme_mode";
 
 function scrollToSection(id: string) {
