@@ -228,5 +228,5 @@ export const portfolioData: Portfolio = {
     shares: 10,
     certifications: 12,
     recommendations: 7
-  ]
+  }
 };
