@@ -373,13 +373,7 @@ body {
   background:
     linear-gradient(145deg, rgba(10, 16, 30, 0.82), rgba(12, 18, 32, 0.58)) !important;
   backdrop-filter: blur(9px);
-  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease;
-}
-
-.ant-card:hover {
-  transform: translateY(-3px);
-  border-color: rgba(124, 246, 255, 0.34);
-  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.28);
+  transition: none;
 }
 
 .equal-height-row .ant-col {
