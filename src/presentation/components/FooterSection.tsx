@@ -1,5 +1,10 @@
 import { Button, Space, Typography } from "antd";
-import { LinkedinOutlined, GithubOutlined, GlobalOutlined } from "@ant-design/icons";
+import {
+  LinkedinOutlined,
+  GithubOutlined,
+  GlobalOutlined,
+  HeartFilled
+} from "@ant-design/icons";
 import type { SocialLink } from "@domain/entities/portfolio";
 
 type FooterSectionProps = {
@@ -33,7 +38,8 @@ export function FooterSection({ fullName, socials }: FooterSectionProps) {
         ))}
       </Space>
       <Typography.Text className="footer-copy">
-        @{year} {fullName}. Built with coffee, curiosity, and late-night debug wins.
+        @{year} {fullName}. Made with Love{" "}
+        <HeartFilled className="footer-heart" />
       </Typography.Text>
     </footer>
   );

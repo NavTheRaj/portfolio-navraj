@@ -599,6 +599,25 @@ body {
   color: var(--text-dim);
 }
 
+.footer-heart {
+  color: #ff5d73;
+  display: inline-block;
+  animation: footerHeartPulse 1.2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+@keyframes footerHeartPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.92;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
 .loading-shell {
   min-height: 100vh;
   display: grid;
