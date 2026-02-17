@@ -142,5 +142,91 @@ export const portfolioData: Portfolio = {
     "Git",
     "Machine Learning",
     "Agile Methodologies"
+  ],
+  certifications: [
+    {
+      name: "Python (Basic)",
+      authority: "HackerRank",
+      startedOn: "Oct 2020",
+      url: "https://www.hackerrank.com/certificates/9ff93fa2a37d"
+    },
+    {
+      name: "REST API (Intermediate)",
+      authority: "HackerRank",
+      startedOn: "Oct 2020",
+      url: "https://www.hackerrank.com/certificates/d0593e6f79cf"
+    },
+    {
+      name: "SQL (Advanced) Certificate",
+      authority: "HackerRank",
+      startedOn: "May 2023",
+      url: "https://www.hackerrank.com/certificates/ce5a62e31afb"
+    },
+    {
+      name: "Java (Basic) Certificate",
+      authority: "HackerRank",
+      startedOn: "May 2023",
+      url: "https://www.hackerrank.com/certificates/4190ec1e653f"
+    },
+    {
+      name: "Learning Kubernetes",
+      authority: "LinkedIn Learning",
+      startedOn: "May 2023",
+      url: "https://www.linkedin.com/learning/certificates/bf712fadc0f820efdb1b3d07c73666e5109994fc2d66a1dcfb4893316fd97f56"
+    },
+    {
+      name: "Level Up: Advanced SQL",
+      authority: "LinkedIn Learning",
+      startedOn: "May 2023",
+      url: "https://www.linkedin.com/learning/certificates/85f5fe5592b5a2af4774423fc3a87edc49bc92e5132625bd6d3bd285812f2260"
+    }
+  ],
+  languages: [
+    {
+      name: "Nepali",
+      proficiency: "Native or bilingual proficiency"
+    },
+    {
+      name: "English",
+      proficiency: "Professional working proficiency"
+    }
+  ],
+  recommendations: [
+    {
+      recommender: "Shreya Sapkota",
+      role: "Engineering Services Manager",
+      company: "Maitri Services",
+      creationDate: "May 2023",
+      text: "Exceptional API engineering quality in Java/Python, strong documentation habits, and collaborative team impact."
+    },
+    {
+      recommender: "Muhyieddin Al-Tarawneh",
+      role: "Full Stack Engineer",
+      company: "Guideline Central",
+      creationDate: "May 2023",
+      text: "Top-performing web architecture student with strong Spring Boot, React, and backend security fundamentals."
+    },
+    {
+      recommender: "Pradip Acharya",
+      role: "Java Developer",
+      company: "Plexus Scientific",
+      creationDate: "Apr 2023",
+      text: "Highly skilled and dedicated full-stack developer with excellent fundamentals in programming and system design."
+    },
+    {
+      recommender: "Arjun Gautam",
+      role: "Creative Head",
+      company: "Delmi Solutions Inc.",
+      creationDate: "Jun 2022",
+      text: "Fast learner and effective problem solver with commendable Python and Java capabilities."
+    }
+  ],
+  communityStats: {
+    connections: 1338,
+    reactions: 425,
+    comments: 13,
+    shares: 10,
+    certifications: 12,
+    recommendations: 7
   ]
 };

@@ -37,10 +37,43 @@ export type Project = {
   url?: string;
 };
 
+export type Certification = {
+  name: string;
+  authority: string;
+  startedOn: string;
+  url?: string;
+};
+
+export type Language = {
+  name: string;
+  proficiency: string;
+};
+
+export type Recommendation = {
+  recommender: string;
+  role: string;
+  company: string;
+  text: string;
+  creationDate: string;
+};
+
+export type CommunityStats = {
+  connections: number;
+  reactions: number;
+  comments: number;
+  shares: number;
+  certifications: number;
+  recommendations: number;
+};
+
 export type Portfolio = {
   profile: Profile;
   experiences: Experience[];
   educations: Education[];
   projects: Project[];
   skills: string[];
+  certifications: Certification[];
+  languages: Language[];
+  recommendations: Recommendation[];
+  communityStats: CommunityStats;
 };

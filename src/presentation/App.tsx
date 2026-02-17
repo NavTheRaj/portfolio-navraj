@@ -11,9 +11,22 @@ import { SkillsSection } from "./components/SkillsSection";
 import { FooterSection } from "./components/FooterSection";
 import { AnimeGameSection } from "./components/AnimeGameSection";
 import { CareerMapSection } from "./components/CareerMapSection";
+import { CredentialsSection } from "./components/CredentialsSection";
+import { RecommendationsSection } from "./components/RecommendationsSection";
+import { ImpactSection } from "./components/ImpactSection";
 
 const { Header, Content } = Layout;
-const navItems = ["experience", "education", "projects", "skills", "map", "game"] as const;
+const navItems = [
+  "experience",
+  "education",
+  "projects",
+  "skills",
+  "credentials",
+  "testimonials",
+  "map",
+  "impact",
+  "game"
+] as const;
 type ThemeMode = "future" | "retro" | "classic" | "paper" | "noir";
 type ThemeModeOption = { label: string; value: ThemeMode };
 const themeModeOptions: ThemeModeOption[] = [
@@ -193,7 +206,13 @@ export function App() {
             <EducationSection educations={data.educations} />
             <ProjectsSection projects={data.projects} />
             <SkillsSection skills={data.skills} />
+            <CredentialsSection
+              certifications={data.certifications}
+              languages={data.languages}
+            />
+            <RecommendationsSection recommendations={data.recommendations} />
             <CareerMapSection experiences={data.experiences} />
+            <ImpactSection stats={data.communityStats} />
             <AnimeGameSection />
           </Space>
           <FooterSection fullName={data.profile.fullName} socials={data.profile.socials} />
