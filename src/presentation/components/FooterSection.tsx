@@ -38,8 +38,9 @@ export function FooterSection({ fullName, socials }: FooterSectionProps) {
         ))}
       </Space>
       <Typography.Text className="footer-copy">
-        @{year} {fullName}. Made with Love{" "}
+        @{year} {fullName}. Made with {" "}
         <HeartFilled className="footer-heart" />
+        by Navraj
       </Typography.Text>
     </footer>
   );
